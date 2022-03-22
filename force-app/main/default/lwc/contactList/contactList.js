@@ -24,6 +24,7 @@ export default class LightningDatatableLWCExample extends LightningElement {
     @track error;
     @track conList ;
     @api recordId;
+    @api recId;
     
     @wire(getContactsList,{recordId:'$recordId'})
     wiredAccounts({
