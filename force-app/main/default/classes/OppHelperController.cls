@@ -7,7 +7,6 @@ public class OppHelperController {
                 ord.AccountId=opp.accountid;
                 ord.Opportunity__c = opp.id;
                 ord.EffectiveDate=opp.closedate;
-                //ord.ContractId=opp.ContractId;
                 ord.Status='Draft';
                 ordlist.add(ord);
             }
