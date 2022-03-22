@@ -15,6 +15,6 @@ public class OppHelperController {
     }
     @AuraEnabled
     public static list<opportunity> getOpportunities(){
-        return [SELECT Id, Name, Amount, StageName, CloseDate FROM Opportunity];
+        return [SELECT Id, Name, Amount, StageName, CloseDate FROM Opportunity limit 10];
     }
 }
