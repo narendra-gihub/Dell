@@ -1,0 +1,7 @@
+<aura:component >
+    <c:AMComponentOne aura:id="AMCmp"/><br/><br/><br/>
+    <aura:attribute name="attrTest" type="string" default="Getting response from aura method"/>
+    {!v.attrTest}<br/>
+    
+    <lightning:button label="Get Aura Result" onclick="{!c.GetReslt}"/>
+</aura:component>

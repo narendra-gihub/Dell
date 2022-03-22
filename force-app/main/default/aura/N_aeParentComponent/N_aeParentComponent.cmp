@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:handler event="c:N_aeEvent" action="{!c.getEventParam}"/>
+    <aura:attribute name="ParentText" type="string" default=""/>
+    <div class="mainSection">
+        {!v.ParentText}
+    </div>
+
+</aura:component>

@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="Sample" type="String" default="default value" />
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:iteration items="{!v.contactList}" var="conlist">
+    	{!conlist.lastname},{!conlist.phone}
+    </aura:iteration>-->
+    <a onclick="{!c.doInit}">Item</a>   
+</aura:component>

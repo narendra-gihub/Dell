@@ -1,0 +1,22 @@
+<aura:component >
+    <aura:attribute name="fields" type="String[]" default="['Name','AnnualRevenue','Industry']" />
+    <div style="border:1px solid #000;width:500Px;">
+        
+        
+        <lightning:fileUpload  name="fileUploader"
+                              label= "Upload File Here"
+                              multiple="{!v.multiple}"
+                              accept="{!v.accept}"
+                              disabled="{!v.disabled}"
+                              recordId="abcd"
+                              onuploadfinished="{! c.handleUploadFinished }"/>
+        
+        <lightning:recordForm
+                              recordId=""
+                              objectApiName="Case"
+                              fields="{!v.fields}"
+                              columns="1"
+                              mode="edit" style="margin-bottom:5px;"
+                              />
+    </div > 
+</aura:component>

@@ -1,0 +1,6 @@
+<aura:component implements="lightning:availableForFlowScreens,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="secondInput" type="string" default=""/>
+    <div class="slds-p-around_large divSample">
+    	<lightning:input type="text" name="input2" label="Enter Second Value" value="{!v.secondInput}"/>
+    </div>
+</aura:component>

@@ -1,0 +1,6 @@
+<aura:component implements="lightning:availableForFlowScreens,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="firstInput" type="string" default="test"/>
+    <div class="slds-p-around_large divSample">
+    	<lightning:input type="text" name="input1" label="Enter First Value" value="{!v.firstInput}"/>
+    </div>
+</aura:component>

@@ -1,0 +1,58 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <div class="FullLayout">
+        <div class="Bckhb">
+            <p>Back To Hub</p>   
+        </div>
+        <div class="Delivery">
+            <h3>Delivery To</h3>
+            <div class="slds-form-element">
+                <!--<label class="slds-form-element__label" for="text-input-id-1">Input Label</label>-->
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                    <!--<svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                    </svg>-->
+                    <input type="text" id="text-input-id-1" placeholder="Delivery To" class="slds-input" />
+                </div>
+            </div>
+        </div>
+        <div class="Product">
+            <h3>Product Name</h3>
+            <div class="slds-form-element">
+                <!--<label class="slds-form-element__label" for="text-input-id-1">Input Label</label>-->
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                    <!--<svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                    </svg>-->
+                    <input type="text" id="text-input-id-1" placeholder="Product Name" class="slds-input" />
+                </div>
+            </div>
+        </div>
+        <div class="Transport">
+            <h3>Transport Details</h3>
+        </div>
+        <div class="PurchaseOrd">
+            <h3>Purchase Order#</h3>
+            <div class="slds-form-element">
+                <!--<label class="slds-form-element__label" for="text-input-id-1">Input Label</label>-->
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                    <!--<svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                    </svg>-->
+                    <input type="text" id="text-input-id-1" placeholder="Purchase Order" class="slds-input" />
+                </div>
+            </div>
+        </div>
+        <div class="Instr">
+            <h3>Special Instructions</h3>
+            <div class="slds-form-element">
+                <!--<label class="slds-form-element__label" for="textarea-id-01">Textarea Label</label>-->
+                <div class="slds-form-element__control">
+                    <textarea id="textarea-id-01" class="slds-textarea" placeholder="Special Instructions"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="btncls">
+            <p>Submit</p>
+        </div>
+    </div>
+</aura:component>

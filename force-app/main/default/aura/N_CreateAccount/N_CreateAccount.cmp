@@ -1,0 +1,29 @@
+<aura:component controller="N_CreateAccount" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global" >
+    
+    <!-- Define Attribute-->
+    <aura:attribute name="account" type="Account" default="{'sobjectType': 'Account',
+                                                                  'name': '',
+                                                                  'phone': '',
+                                                                  'email': ''
+                                                                  }"/>
+    <div class="container-fluid">
+        <h3>Please Enter The Candidate Information</h3>
+        <div class="form-group">
+            <label>Name</label>
+            <ui:inputText class="form-control" value="{!v.account.name}"/>
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <ui:inputText class="form-control" value="{!v.account.phone}"/>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <ui:inputText class="form-control" value="{!v.account.email}"/>
+        </div>
+    </div>
+    <div class="col-md-4 text-center">
+        <lightning:button class="btn btn-default" onclick="{!c.createAccount}">Create Account</lightning:button>
+    </div>
+</aura:component>

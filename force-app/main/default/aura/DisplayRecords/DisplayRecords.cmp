@@ -1,0 +1,13 @@
+<aura:component controller="AccController"> 
+    
+    <aura:attribute name="accData" type="Account[]" />
+    <aura:attribute name="mycolumns" type="List"/>
+      
+    <lightning:button label="Display Accounts" onclick="{!c.fetchAcc}"/>
+      
+    <lightning:datatable data="{! v.accData }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+      
+</aura:component>

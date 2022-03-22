@@ -1,0 +1,5 @@
+<design:component>
+    <design:attribute name="Message" label="Change Message"/>
+    <design:attribute name="bgclr" label="Change BG Color"/>
+    <design:attribute name="padding" label="Change Padding"/>
+</design:component>

@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="showData" type="boolean" default="true" /> 
+    <aura:attribute name="result" type="string" default="Do data found" /> 
+    
+    <div style="padding:20px;font-size:20px;background-color:red;color:white">
+        Salesforce Lightning Experience
+    </div>
+    
+    
+    <aura:if isTrue="{!v.showData}">
+        <aura:iteration items="{!v.result}" var="d">
+            {!d}<br/>
+        </aura:iteration>
+    </aura:if>
+    
+    <lightning:button name="hideData" onclick="{!c.hideData}"/>
+	
+</aura:component>

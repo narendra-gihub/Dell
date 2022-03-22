@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <c:N_amChildComponent aura:id="childComponent"/>
+        
+    <lightning:button label="Call Aura Method" onclick="{!c.callAuraMethod}" />
+    <aura:attribute name="parentAttr" type="String" default="Test"/>
+    <div class="amstyles">
+        {!v.parentAttr} 
+    </div>
+    
+</aura:component>

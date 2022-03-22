@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<div style="background-color:white;padding:50px;font-size:30px">Hi Team, Welcome to salesforce lightning training program</div>
+    <lightning:button label="display alert" onclick="displayAlert"/>
+</aura:component>

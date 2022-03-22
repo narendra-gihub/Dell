@@ -1,0 +1,9 @@
+<!--Basic lightning web component-->
+<template>
+    <lightning-card title="Change Message" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <div class="MessageSection">{message}</div>
+            <lightning-input label="Type message" value={typeMessage} onchange={changeMessage}></lightning-input>
+        </div>
+    </lightning-card>
+</template>

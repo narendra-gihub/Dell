@@ -1,0 +1,19 @@
+<!--Example to invoke apex controller and display contacts which are related to current account-->
+<template>
+    <lightning-card variant="narrow"
+                    icon-name="standard:opportunity">
+                    <h1 slot="title">Contacts</h1>
+        <div slot="footer"> 
+            <template if:true={conList}>
+                <lightning-datatable 
+                    data={conList} 
+                    columns={Columns} 
+                    key-field="Id">  
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+        </div>
+    </lightning-card>
+</template>

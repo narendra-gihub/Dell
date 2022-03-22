@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <c:TestComponent01 aura:id="AMId" />
+    
+    <aura:attribute name="message2" type="string" default="Test"/>
+    {! v.message2}
+	
+    <br/>
+    
+    <lightning:button label="PullData" onclick="{!c.Pulldata}"/>
+</aura:component>

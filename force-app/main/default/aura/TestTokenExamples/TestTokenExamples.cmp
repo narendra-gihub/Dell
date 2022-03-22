@@ -1,0 +1,10 @@
+<aura:component >
+	<div class="styleCls1">
+    	Token Bundle 01
+    </div>
+    
+    <div class="styleCls2">
+    	Token Bundle 02
+    </div>
+    
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component extends="c:ExtensibleComponent">
+    
+    <aura:set attribute="message" value="Hello World!" />
+    
+    {! v.message} <br/>
+    
+</aura:component>

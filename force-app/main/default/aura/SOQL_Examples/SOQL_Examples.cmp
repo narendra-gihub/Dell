@@ -1,0 +1,32 @@
+<aura:component >
+	<!--- Parent to child query -->
+    select id,name,(select id,name from contact) from account;
+    select id,name,(select id,name from orders__r) from customers__c;(b/w custom objects)
+    
+    <!--- Child to parent query -->
+    select id,name,account.name from contact;
+    select id,name,customers__r.name from orders__c;(b/w custom objects)
+    
+    <!--- Display recently created (limit 30) records -->
+    select id,name from account order by createdDate desc limit 30;
+    
+    <!--- Get name and createdDate of Accounts which are created before last month 
+    SELECT name, id, createdDate FROM account WHERE createdDate < LAST_MONTH;-->
+    
+    <!--- Get contact on asc order of account creation date -->
+    select id, name, account.CreatedDate from contact order by account.CreatedDate asc;
+    
+    <!--- Get the names and created date of all the Account records which are created in last 30 days-->
+    SELECT name, id, createdDate FROM account WHERE createdDate = LAST_N_DAYS:30;
+    
+    <!--- Get name from contact where name is either Sarah Smith or Jessi Jones-->
+	SELECT name, id from contact where name IN ('Sarah Smith','Jessi Jones');
+    
+	    
+    <!--- SOSL query example -->
+    find {"test"} in name fields returning account(name,phone),contact(name,phone);
+    
+    
+    
+    
+</aura:component>

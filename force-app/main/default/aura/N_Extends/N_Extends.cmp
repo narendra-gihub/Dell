@@ -1,0 +1,3 @@
+<aura:component extends="c:GetRecords">
+    Salesforce Lightning extensible concept
+</aura:component>

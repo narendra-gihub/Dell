@@ -1,0 +1,5 @@
+<aura:component extensible="true"> 
+  
+    <aura:attribute name="message" type="string" default="Hello"/> 
+    
+</aura:component>

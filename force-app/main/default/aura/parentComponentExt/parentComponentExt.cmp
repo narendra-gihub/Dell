@@ -1,0 +1,4 @@
+<aura:component extensible="true" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="ParentMessage" type="string" default="Parent Attribute Value"/>
+    {!v.ParentMessage}
+</aura:component>

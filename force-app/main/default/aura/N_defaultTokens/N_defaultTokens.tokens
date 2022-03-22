@@ -1,0 +1,6 @@
+<aura:tokens>
+    <aura:token name="tknColor" value="color"/>
+    <aura:token name="tknBackgroundColor" value="#034e9b"/>
+    <aura:token name="tknPadding" value="20px"/>
+    <aura:token name="tknMargin" value="10px"/> 
+</aura:tokens>

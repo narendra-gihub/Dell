@@ -1,0 +1,15 @@
+<apex:page controller="ActionSupport" standardStylesheets="true">
+    <apex:slds />
+    <apex:form id="xxx">
+      <apex:pageBlock >
+             <apex:inputText value="{!value1}"/> <br/> <br/>
+             <apex:inputText value="{!value2}"/> <br/> <br/>
+             <apex:selectList value="{!selectedvalue1}" size="1" >
+                  <apex:selectOptions value="{!Allvalues}"/>
+                  <apex:actionSupport event="onchange" action="{!callMethodinController}"/>
+             </apex:selectList>  <br/><br/>
+             
+              YOUR OUTPUT VALUE IS:  &nbsp;<apex:outputText >{!outvalue}</apex:outputText>
+      </apex:pageBlock>
+    </apex:form>
+</apex:page>

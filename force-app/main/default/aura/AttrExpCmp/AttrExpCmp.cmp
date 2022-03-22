@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+    <aura:attribute name="smpleText" type="string" default="Attribute Sample Value"/>
+    <div style="color:#fff;background-color:red;padding:30px;font-size:20px;">{!v.smpleText}</div>
+</aura:component>

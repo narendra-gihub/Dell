@@ -1,0 +1,13 @@
+.THIS.styleCls1 {
+    color:token(clr);
+    background-color:green;
+    padding:token(pndg);
+    font-size:30px;
+}
+
+.THIS.styleCls2 {
+    color:token(clr);
+    background-color:blue;
+    padding:token(pndg);
+    font-size:30px;
+}

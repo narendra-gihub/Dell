@@ -1,0 +1,22 @@
+<apex:page controller="OppsearchController" standardStylesheets="true">
+<apex:slds />
+<apex:form >
+<apex:pageBlock id="pb" mode="edit">
+<apex:pageBlockSection >
+<apex:pageBlockSectionItem >
+<apex:outputLabel for="Search String">Search String</apex:outputLabel>
+<apex:panelGroup >
+<apex:inputText value="{!searchString}"/>
+<apex:commandButton value="GO" action="{!oppResult}" status="as" reRender="pbt"/>
+<apex:actionStatus startText="Searching......." id="as"></apex:actionStatus>
+</apex:panelGroup>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Result">
+<apex:pageBlockTable value="{!OppSearchResult}" var="opp" id="pbt">
+<apex:column value="{!opp.name}"/>
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

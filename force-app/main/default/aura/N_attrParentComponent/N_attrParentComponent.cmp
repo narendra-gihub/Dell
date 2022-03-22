@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:attribute name="ParentAttribute" type="string" default="Parent Component Attribute Value"/>
+    <div class="slds-text-heading_large slds-p-around_medium slds-m-bottom_medium slds-align_absolute-center mainSection">
+        {!v.ParentAttribute}
+    </div>
+    
+    <c:N_attrChildComponent ChildAttribute="{!v.ParentAttribute}"/>
+</aura:component>

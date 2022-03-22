@@ -1,0 +1,12 @@
+.THIS.firstDiv {
+    font-size:token(fntSize);
+    padding:token(fntSize);
+    background-color:red;
+    color:token(clr);
+}
+.THIS.SecondtDiv{
+    font-size:token(fntSize);
+    padding:token(fntSize);
+    background-color:green;
+    color:token(clr);
+}

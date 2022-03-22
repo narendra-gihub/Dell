@@ -1,0 +1,5 @@
+<aura:component extends="c:Cmp01">
+	<aura:attribute name="message2" type="string" default="Test Values"/>
+    
+    <aura:set attribute="message01" value="{! v.message2}"/> 
+</aura:component>

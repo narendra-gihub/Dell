@@ -1,0 +1,6 @@
+<aura:component extensible="true">
+    <!--aura:method name="AMName" action="{!c.AMAction}"/-->
+    <aura:attribute name="AMAttr" type="string" default="Example for send data by using Extensible true concept"/> 
+    {!v.AMAttr} <br/><br/>
+    <!--c:AttrExpCmp smpleText="{!v.AMAttr}"/--> 
+</aura:component>

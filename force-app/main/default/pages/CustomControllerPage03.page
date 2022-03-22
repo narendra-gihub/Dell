@@ -1,0 +1,13 @@
+<apex:page controller="ContactRecords" standardStylesheets="true">
+    <apex:slds />
+    <apex:form >  
+        <apex:pageBlock >
+            <apex:commandButton value="Get Contacts" action="{!GetContacts}"/>
+                <apex:pageBlockTable value="{!DisplayContacts }" var="cont">
+                    <apex:column value="{!cont.firstname}"/>
+                    <apex:column value="{!cont.lastname}"/>
+                    <apex:column value="{!cont.Phone}"/>
+                </apex:pageBlockTable>
+        </apex:pageBlock>        
+    </apex:form>
+</apex:page>

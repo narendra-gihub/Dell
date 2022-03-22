@@ -1,0 +1,4 @@
+<aura:component extends="c:TestComponent03">
+    {!v.message1}<br/>
+    {!v.message2}
+</aura:component>

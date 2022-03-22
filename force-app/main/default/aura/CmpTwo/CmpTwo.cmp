@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="AttrTwo" type="string" default="Component Two Value"/>
+    {!v.AttrTwo}
+</aura:component>

@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler event="c:ApplicationEvent" action="{!c.ReceiveEnt}"/>
+    <aura:attribute name="cmp2text" type="string" default="Welcome to component Two attribute value"/>
+    <div style="background-color:green;color:white;padding:20px;">{!v.cmp2text}</div>    
+</aura:component>

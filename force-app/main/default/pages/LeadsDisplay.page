@@ -1,0 +1,9 @@
+<apex:page standardController="order" recordSetVar="ord">
+     <apex:pageBlock title="Display Orders Using Standard Controller">
+         <apex:pageBlockTable value="{!ord}" var="or" rendered="true">
+             <apex:column value="{!or.OrderNumber}"/> 
+             <apex:column value="{!or.enddate}"/>
+             <apex:column value="{!or.status}"/>
+         </apex:pageBlockTable> 
+     </apex:pageBlock> 
+</apex:page>

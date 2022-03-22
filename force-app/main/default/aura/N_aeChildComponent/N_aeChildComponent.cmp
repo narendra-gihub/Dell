@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >  
+    <aura:attribute name="data" type="string" default="Salesforce Training Program"/>
+    <div class="mainSec">
+        <lightning:button label="Pass Data" variant="brand" onclick="{!c.setEventParam}"/>
+    </div>
+</aura:component>

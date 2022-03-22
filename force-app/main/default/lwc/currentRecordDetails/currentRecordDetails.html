@@ -1,0 +1,13 @@
+<!--Example to display current record details-->
+<template>
+    <div style="padding:20x;background-color:#fff;"> 
+        <lightning-record-form record-id={recordId} 
+                                object-api-name="Account" 
+                                layout-type="Full" 
+                                columns="2" 
+                                mode="view"
+                                onsuccess={handleSuccess} 
+                                onsubmit={handleSubmit}>
+        </lightning-record-form> 
+    </div>
+</template>

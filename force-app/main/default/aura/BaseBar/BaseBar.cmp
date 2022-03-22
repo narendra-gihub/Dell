@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="fieldcount" type="integer" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.InitilizedVal}"/>    
+    
+    
+    {!v.fieldcount}
+    <div style="background-color:white;">
+        <div style="padding:20px;margin-bottom:20px;">Fields Progress Indication:</div>
+        <div class="slds-progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" role="progressbar" style="padding:0px 20px">
+            <span class="slds-progress-bar__value slds-progress-bar__value_success" style="width:75%">
+                <span class="slds-assistive-text">Progress: 75%</span>
+            </span>
+        </div>
+    </div>
+</aura:component>

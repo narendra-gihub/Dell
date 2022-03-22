@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:registerEvent name="PlayVideoEvent" type="c:PlayVideoEvent"/>
+    <div style="padding:10px;background-color:#fff;border-radius:3px;text-align:center">
+        <lightning:button variant="brand" label="Play First Video" title="Brand action" onclick="{!c.streamVideo }"/>
+        <lightning:button variant="brand" label="Play Second Video" title="Brand action" onclick="{!c.streamVideo2 }"/>
+    </div>
+</aura:component>

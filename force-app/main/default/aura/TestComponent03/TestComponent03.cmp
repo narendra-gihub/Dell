@@ -1,0 +1,4 @@
+<aura:component extensible="true">
+    <aura:attribute name="message1" type="string" default="Text Message 01"/>
+    <aura:attribute name="message2" type="string" default="Text Message 02"/>
+</aura:component>

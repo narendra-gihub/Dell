@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" controller="SObjectsController">
+    <aura:attribute name="ContactsList" type="list" /> 
+    <div style="background-color:#fff;padding:10px">
+        <lightning:button label="Get Related Contacts" class="slds-button_brand" onclick="{!c.CallContacts }"  />
+        
+        <table>
+            <thead>  
+                <tr>
+                    <th>LastName</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{! v.ContactsList}" var="cont">
+                    <tr>
+                        <td>{!cont.LastName}</td>
+                        <td>{!cont.Email}</td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+</aura:component>

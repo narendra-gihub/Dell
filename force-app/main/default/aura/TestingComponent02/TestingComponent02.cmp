@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="message" type="string" default="Hi Team"/>
+    
+    <div class="container">{!v.message}</div> <br/><br/>
+    <div class="subContainer">{!v.message}</div>
+    <lightning:button label="Call Controller" onclick="{!c.CallController}"/><br/><br/>
+    
+    <c:CmpBundle/>
+</aura:component>

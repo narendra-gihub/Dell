@@ -1,0 +1,9 @@
+<apex:page controller="OrdersController">
+  <apex:pageBlock title="Display Orders">
+      <apex:pageBlockTable value="{!orders}" var="order">
+            <apex:column value="{!order.OrderNumber}" />
+            <apex:column value="{!order.enddate}" />
+            <apex:column value="{!order.status}" /> 
+      </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>

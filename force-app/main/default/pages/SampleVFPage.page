@@ -1,0 +1,15 @@
+<apex:page controller="SampleController" >
+    <apex:form >
+       <apex:pageblock id="account" title="Account Details(Standard Object)" >
+            <apex:pageblockTable value="{!acc}" var="a">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.AccountNumber}"/>
+            </apex:pageblockTable>
+        </apex:pageblock>
+       <apex:pageblock id="member" title="Member Details(Custom Object)">
+            <apex:pageblockTable value="{!cust}" var="c">
+                <apex:column value="{!c.Name}"/>
+            </apex:pageblockTable>         
+        </apex:pageblock>          
+    </apex:form>
+</apex:page>

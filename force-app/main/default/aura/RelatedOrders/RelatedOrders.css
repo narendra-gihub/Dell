@@ -1,0 +1,7 @@
+.THIS .slds-card__footer {
+    display:none;
+}
+.THIS.MainSection{
+    background-color:red;
+    border-radius:5px; 
+}

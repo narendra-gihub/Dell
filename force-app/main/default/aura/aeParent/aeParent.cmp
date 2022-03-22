@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:registerEvent name="aeEventRgstr" type="c:aeEvent"/>
+    
+    <aura:attribute name="ParentAttr" type="string" default="Parent Attribute Value"/>
+    {!v.ParentAttr}<br/>
+    <lightning:button label="Send Data" onclick="{!c.sendData}"/>
+</aura:component>

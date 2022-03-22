@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="playFile" type="boolean" default="false"/>
+    <aura:attribute name="src" type="boolean" />
+</aura:event>

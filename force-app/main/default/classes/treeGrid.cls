@@ -1,0 +1,45 @@
+public with sharing class treeGrid {
+    @AuraEnabled(cacheable=true)
+     public static List<AccountWrapper> getTreeGridData(){
+         List<Account> accs = [Select Id , Name,(Select Id , Name from Contacts) from Account];
+         List<AccountWrapper> aooo = new List<AccountWrapper>();
+         for(Account a : accs){
+             AccountWrapper aWraper = new AccountWrapper() ; 
+             aWraper.name =a.Name ;
+             aWraper.label =a.Name ;
+             List<Items> co = new List<Items>();
+             for(Contact c : a.Contacts){
+                 Items conWrapp = new Items();
+                 conWrapp.name =c.Name ;
+                 conWrapp.label =c.Name ;
+                 co.add(conWrapp);
+             }
+             aWraper.items = co;
+             aooo.add(aWraper);
+             
+         }
+         return aooo ;
+     } 
+     @AuraEnabled(cacheable=true)
+     public static List < Account > fetchAccounts() {
+
+        return [ SELECT Id, Name, Industry, ( SELECT Id, FirstName, LastName FROM Contacts ) FROM Account LIMIT 10 ];
+       
+    }
+     public Class AccountWrapper{
+         @AuraEnabled
+         public String name {get;set;}
+         @AuraEnabled
+         public String label {get;set;}
+         @AuraEnabled
+         public List<Items> items {get;set;}
+     }
+     public Class Items{
+         @AuraEnabled
+         public String name {get;set;}
+         @AuraEnabled
+         public String label {get;set;}
+         @AuraEnabled
+         public List<Items> items {get;set;}
+     }
+ }

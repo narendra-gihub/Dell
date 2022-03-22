@@ -1,0 +1,130 @@
+Test1:
+------------------------------------
+<template>
+    <lightning-card title="View Record">
+        <div >
+            <lightning-record-view-form record-id={recordId} object-api-name="Account">
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_12-of-12">
+                        <lightning-output-field field-name="Name"></lightning-output-field>
+                        <lightning-output-field field-name="BillingCity"></lightning-output-field>
+                        Reviewing details for account in city i.e.
+
+                        <template if:true={BillingCity}>
+                            <lightning-output-field field-name="BillingCity"></lightning-output-field> 
+                            <p>None Specified</p>  
+                        </template>                  
+                    </div>
+                </div>
+                </lightning-record-view-form>
+            </div>
+            </lightning-card>
+</template>
+
+import { LightningElement,api,wire } from 'lwc';
+export default class AccountDetails extends LightningElement {
+    @api recordId;
+    connectedCallback(){
+
+    }
+    
+}
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+    <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>
+
+
+
+
+
+
+Test2:
+------------------------------------------------
+<template>    
+    <div style="background-color:#ffffff">
+        <div class="slds-grid slds-wrap">
+ 
+            <div class={accWidth}>
+                Label
+            </div>
+            <div class={accWidth}>
+                Value
+            </div>
+ 
+            <div class={accWidth}>
+                Label
+            </div>
+            <div class={accWidth}>
+                Value
+            </div>
+ 
+            <div class={accWidth}>
+                Label
+            </div>
+            <div class={accWidth}>
+                Value
+            </div>
+        </div>
+    </div>
+</template>
+
+import { LightningElement, track, api, wire } from 'lwc';
+import { getRecord } from 'lightning/uiRecordApi';
+/*const FIELDS = [
+    'Account.Name',
+    'Account.width__c',
+];*/
+export default class WireGetRecordDynamicContact extends LightningElement {
+    @track accwidth;
+    
+    @api recordId;
+
+    @track error;
+
+    @wire(getRecord, { recordId: '$recordId', fields: ['Account.Width__c'] })
+    Account({data,error}){
+    if(data){ 
+        console.log(data);
+        this.width = this.Account.data.fields.width__c.value;
+        this.accwidth= this.width+'px';  
+        console.log('this.accwidth>>>'+this.accwidth); 
+    }else if (error) {
+         this.error = error;
+    } 
+}   
+} 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+    <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>
+
+
+
+Test2:
+-----------------------------------
+public class Test1 {
+    @AuraEnabled
+    public static void updateAccount(Account account) {
+        if (Schema.sObjectType.Account.isAccessible()) {
+            account acc = [select id,name from account where id=:account.id];
+         }
+        acc.name='test1';
+        if (Schema.sObjectType.Account.isUpdateable()) {
+            update acc;
+         }
+    }
+}
+
+

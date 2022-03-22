@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">       
+    
+	<div style="color:#fff;background-color:green;padding:15px">Salesforce lightning attributes</div> 
+    <div style="color:#fff;background-color:red;padding:25px">Salesforce lightning attributes</div>
+    
+    <aura:attribute name="text" type="string" default="Hi Madhav"/>
+    
+    {!v.text}
+    
+</aura:component>

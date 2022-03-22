@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" 
+                controller="CustomerController" 
+                extensible="true">   
+    
+    <aura:attribute name="Customers" type="Customers__c"/> 
+    
+    
+    <div class="mainSection slds-p-around_large">
+        <div class="slds-grid">
+            <div class="slds-size_2-of-12">
+                <lightning:button label="Get Customers" variant="brand" onclick="{!c.GetCustomerRecords}"/>
+            </div>
+            <div class="slds-size_10-of-12">
+                <table border="1px solid #000">
+                    <thead>
+                        <tr>
+                            <td width="25%">Name</td>
+                            <td width="25%">Email</td>
+                            <td width="25%">Phone</td>
+                            <td width="25%">Income</td>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <aura:iteration items="{!v.Customers}" var="Cust">
+                            <tr>
+                                <td>{! Cust.Name}</td>
+                                <td>{! Cust.Phone__c}</td>
+                                <td>{! Cust.Email__c}</td>
+                                <td>{! Cust.Income__c}</td>
+                            </tr>
+                        </aura:iteration> 
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>
+</aura:component>

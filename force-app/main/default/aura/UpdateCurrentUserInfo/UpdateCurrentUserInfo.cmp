@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" 
+                controller="currentUserInfoCtrl">
+    
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    
+    <aura:attribute name="userInfo" type="user"/>  
+    
+    <div style="background-color:#fff;padding:30px">
+    	<lightning:input aur:id="fName" type="text" name="FirstName" label="First Name" required="true" value="{!v.userInfo.FirstName}" />
+        <lightning:input aur:id="lName" type="text" name="LastName" label="Last Name" required="true" value="{!v.userInfo.LastName}" />
+        <lightning:button class="slds-m-top_large" label="updateInfo" onclick="{!c.updateUserInfo}"/>
+    </div>
+    
+</aura:component>

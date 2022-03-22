@@ -1,0 +1,5 @@
+<aura:event type="Component" description="Event template">
+    <aura:attribute name="name" type="string" default="Test"/>
+    <aura:attribute name="number" type="integer" default="123"/>
+    <aura:attribute name="IsActive" type="boolean" default="true"/>
+</aura:event>

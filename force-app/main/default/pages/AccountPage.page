@@ -1,0 +1,5 @@
+<apex:page controller="SampleController">
+    <apex:repeat value="{!custList}" var="acc">
+        <apex:outputText value="{!acc.name}" escape="false"/><br/>
+    </apex:repeat>  
+</apex:page>

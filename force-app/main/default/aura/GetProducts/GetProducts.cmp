@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="OppLineItems" type="list"/>
+    <div style="background-color:#fff">
+        <lightning:button label="OppLineItems" onclick="{!c.getOppLineItems}"/>
+        
+        <table>
+        	<thead>
+            	<tr>
+                	<th>Name</th>
+                    <th>Quentity</th>  
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.OppLineItems}" var="oli">
+            	<tr>
+                	<td>{! oli.Name}</td>
+                    <td>{! oli.quentity}</td>   
+                </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+        
+        
+    </div>
+    
+</aura:component>

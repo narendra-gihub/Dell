@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:registerEvent name="AppEvent" type="c:ApplicationEvent"/>
+    <aura:attribute name="cmp1text" type="string" default="Welcome to component one attribute value"/>
+    <div style="background-color:red;color:white;padding:20px;">{!v.cmp1text}</div>
+    <lightning:button label="Send Val" onclick="{!c.sendVal}"/>
+</aura:component>

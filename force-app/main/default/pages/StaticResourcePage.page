@@ -1,0 +1,35 @@
+<apex:page standardStylesheets="true">
+    <apex:slds />
+    
+    <apex:stylesheet value="{!$Resource.Extstyles}"/> 
+    
+    <style>
+        .inpageCss{
+            background-color:Green;
+            font-size:20px;
+            color:white;
+            padding:20px;
+        }
+    </style>
+    
+    <div class="extStyles">
+        Hi Madhav, Welcome to salesforce training program        
+    </div>
+    
+    <div class="inpageCss">
+        Hi Hari,Welcome to salesforce training program        
+    </div>
+    
+    <div style="background-color:Blue;font-size:20px;color:white;padding:20px">
+        Hi Hari,Welcome to salesforce training program        
+    </div>
+    
+</apex:page>
+
+
+<!---
+    Ways:
+        1.Inline
+        2.Internal
+        3.External
+--->

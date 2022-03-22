@@ -1,0 +1,69 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="StatusBarDemoController">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="BarVal" type="integer"/>  
+    <aura:attribute name="dataset" type="String" />
+    <aura:attribute name="fieldsList" type="List" />
+    <aura:attribute name="totalfields" type="double"/>     
+    <aura:attribute name="datafilledfileds" type="double"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}"/>
+    <!-- Model Box -->
+    <aura:attribute name="isModalOpen" type="boolean" default="false"/> 
+    
+    <div style="background-color:white;padding-bottom:20px;border-radius:3px;" class="slds-p-around_small">
+        <div style="padding:10px 0px 20px 0px;color:#004f94;" class="slds-text-heading_small"><b>Fields Status:</b></div>
+        <div style="padding:10px 0px;float:right"><b>{! v.datafilledfileds + '/' + v.totalfields}</b></div>
+        <div style="margin-bottom:20px" class="slds-progress-bar slds-progress-bar_large" aria-valuemin="0" aria-valuemax="100" aria-valuenow="" role="progressbar" > <!-- onmouseover="{!c.showData}" onmouseleave="{!c.hideData}"-->
+            <span class="slds-progress-bar__value" style="{!'width:'+ v.BarVal+'%'}"></span> <!--  onmouseover="{!c.showData}" onmouseleave="{!c.hideData}" -->
+            
+            <!---
+            <div class="slds-hide" id="fData" aura:id="fData" style="background-color:white;padding:10px;width:200px;box-shadow: 0px 0px 5px 0px #000;border-radius:3px;margin-top:10px;"> 
+                <b>Filled Fields:</b>
+                <aura:iteration items="{!v.fieldsList}" var="fList" >
+                    <div>{!fList}</div>
+                </aura:iteration>
+            </div>
+			--> 
+            
+        </div>   
+        
+        <!--- Model Box Start Here -->
+        <div>
+            <lightning:button variant="brand"
+                              label="Completed Fields"
+                              title="Completed Fields"
+                              onclick="{! c.openModel }" />
+            <!--Use aura:if tag to display/hide popup based on isModalOpen value-->  
+            <aura:if isTrue="{!v.isModalOpen}">
+                <!-- Modal/Popup Box starts here-->
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container" style="width:300px">
+                        <!-- Modal/Popup Box Header Starts here-->
+                        <header class="slds-modal__header"> 
+                            <lightning:buttonIcon iconName="utility:close"
+                                                  onclick="{! c.closeModel }"
+                                                  alternativeText="close"
+                                                  variant="bare-inverse"
+                                                  class="slds-modal__close"/>
+                            <h5 class="slds-text-heading_small slds-hyphenate">List of Completed Fields</h5>
+                        </header>
+                        <!--Modal/Popup Box Body Starts here-->
+                        <div class="slds-modal__content slds-p-around_medium slds-text-body_medium" id="modal-content-id-1">
+                            <aura:iteration items="{!v.fieldsList}" var="fList" >
+                                <div>{!fList}</div>
+                            </aura:iteration> 
+                        </div>
+                        <!--Modal/Popup Box Footer Starts here-->
+                        <footer class="slds-modal__footer">
+                            <lightning:button variant="brand"
+                                              label="Cancel"
+                                              title="Cancel"
+                                              onclick="{! c.closeModel }"/>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,45 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes,lightning:availableForFlowScreens,force:appHostable,lightning:actionOverride,lightning:isUrlAddressable,force:hasRecordId">
+    
+    <!---aura:registerEvent name="loadacctid" type="c:Result"/-->
+    
+    <aura:attribute name="recordId" type="Id" />  
+    <!--    <aura:attribute name="acctId" type="Id" /> -->
+    <aura:attribute name="newAccount" type="Object"/>
+    <aura:attribute name="simpleNewAccount" type="Object"/>
+    <aura:attribute name="newAccountError" type="String"/>
+    <force:recordData aura:id="accountRecordCreator"
+                      layoutType="FULL"
+                      targetRecord="{!v.newAccount}"
+                      targetFields ="{!v.simpleNewAccount}"
+                      targetError="{!v.newAccountError}"
+                      />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:handler event="force:navigateToSObject" action="{!c.navigate}"/>
+    
+    <lightning:progressIndicator currentStep="1" type="path" variant="base">
+        <lightning:progressStep label="New Patient" value="1"/>
+        <lightning:progressStep label="New Case" value="2"/>
+        <lightning:progressStep label="Review" value="3"/>
+        <lightning:progressStep label="Complete" value="4"/>
+    </lightning:progressIndicator>
+    
+    <!-- Display the new contact form -->
+    <div class="Create Account">
+        <lightning:card iconName="action:new_account" title="Create An Account">
+            <div class="slds-p-horizontal--small">
+                <lightning:input aura:id="accountField" label="First Name" value="{!v.simpleNewAccount.FirstName}"/>
+                <lightning:input aura:id="accountField" label="Last Name" value="{!v.simpleNewAccount.LastName}"/>
+                <lightning:input aura:id="accountField" type="date" name="accountField" label="Birthdate" value="{!v.simpleNewAccount.PersonBirthdate}"/>
+                <br/>
+                <lightning:button label="Next" variant="brand" onclick="{!c.handleSaveaccount}"/>
+                <lightning:navigation aura:id="navService"/>    
+            </div>
+        </lightning:card>
+    </div>
+    <!-- Display Lightning Data Service errors -->
+    <aura:if isTrue="{!not(empty(v.newaccountError))}">
+        <div class="recordError">
+            {!v.newaccountError}</div>
+    </aura:if>
+</aura:component>

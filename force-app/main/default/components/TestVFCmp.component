@@ -1,0 +1,10 @@
+<apex:component >
+    Testing Visualforce Component
+    <apex:attribute name="FirstName" type="string" default="Salesforce" description="Creating Test Value"/>
+    <div style="color:#fff;background-color:Green;padding:20px">
+        {! FirstName}
+        
+        
+    </div>
+    
+</apex:component>

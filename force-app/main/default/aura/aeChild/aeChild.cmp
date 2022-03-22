@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:handler event="c:aeEvent" action="{!c.hadlerAction}"/>
+    <aura:attribute name="ChildAttr" type="string" default="Child Attribute Value"/>
+    {!v.ChildAttr}
+    Testing
+</aura:component>

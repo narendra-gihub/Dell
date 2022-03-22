@@ -1,0 +1,52 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" 
+                Controller="AccountDataTableController">
+    <aura:attribute type="Account[]" name="acctList"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAcc}"/>
+    
+    <lightning:datatable class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered"
+                         data="{! v.acctList }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"/>
+    <div style="margin-top:20px">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">Industry</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Website">Website</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.acctList}" var="a">
+                    <tr>
+                        <td data-label="Account Name">
+                            <div class="slds-truncate" title="">{!a.Name}</div>
+                        </td>
+                        <td data-label="Industry">
+                            <div class="slds-truncate" title="">{!a.Industry}</div>
+                        </td>
+                        <td data-label="Phone">
+                            <div class="slds-truncate" title="">{!a.Phone}</div>
+                        </td>
+                        <td data-label="Website">
+                            <div class="slds-truncate" title="">{!a.Website}</div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+</aura:component>

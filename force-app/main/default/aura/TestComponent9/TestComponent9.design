@@ -1,0 +1,5 @@
+<design:component>
+    <design:attribute name="message" label="Changing Text"/>
+    <design:attribute name="show" label="Hide"/>
+    <design:attribute name="bgColor" label="Change Color"/>
+</design:component>

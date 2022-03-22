@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_4-of-12">
+            <lightning:input maxlength="4" 
+                             pattern="[0|2|3|4|6|7|8]*" 
+                             name="postcode" 
+                             class="slds-input" />
+        </div>
+        <div class="slds-col slds-size_4-of-12">
+            <lightning:input name="input1" aura:id="postalcode" label="Enter some text" onkeyup="{!c.checkValidity}"/>
+        </div>
+        <div class="slds-col slds-size_4-of-12">
+            <lightning:input name="input1" label="Enter some text" />
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning:input name="input1" label="Enter some text" />
+                </div>
+                <div class="slds-col">
+                    <lightning:input name="input1" label="Enter some text" />
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

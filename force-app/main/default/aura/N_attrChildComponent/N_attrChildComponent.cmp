@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:attribute name="ChildAttribute" type="string" default="Testing....."/> 
+    <div class="slds-p-around_medium childSection"> 
+        {!v.ChildAttribute}
+    </div>
+</aura:component>

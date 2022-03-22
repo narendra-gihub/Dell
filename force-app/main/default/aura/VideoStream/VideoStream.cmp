@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="frmWidth" type="string" default="100%"/>
+    <aura:attribute name="frmHeight" type="string" default="300px"/>
+    <aura:attribute name="frmBgColor" type="string" default="#fff"/>
+    <aura:attribute name="frmPadding" type="string" default="10px"/>
+    <aura:attribute name="frmMargin" type="string" default="0px"/>
+    <aura:attribute name="frmBorderRadius" type="string" default="3px"/>
+    <aura:attribute name="runVideo" type="boolean" default="true"/>
+    <aura:attribute name="src" type="string" default="https://tv.hoopla.net/#/gUE7fKk"/>
+    <aura:handler event="c:PlayVideoEvent" action="{!c.playVideo}"/>
+    <div style="{!'width:'+v.frmWidth+'; Height:'+ v.frmHeight+';background-color:'+v.frmBgColor+';padding:'+v.frmPadding+';marging:'+v.frmMargin+';border-radius:'+v.frmBorderRadius}">
+        <aura:if isTrue="{!v.runVideo}">
+            <div>
+                <iframe width="100%" height="275px" src="{!v.src}"></iframe>
+            </div>
+        </aura:if>
+        <!---<video width="400" controls="controls">
+       <source src="https://www.youtube.com/watch?v=N-vrBbo4FC0" type="video/mp4"/>
+   </video>-->
+    </div>
+</aura:component>

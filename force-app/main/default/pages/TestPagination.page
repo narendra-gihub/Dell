@@ -1,0 +1,96 @@
+<apex:page doctype="html-5.0" 
+           title="Sample Visualforce Paging Example" 
+           controller="SamplePagingExample" 
+           sidebar="false" 
+           readonly="true" 
+           cache="false"
+           lightningStylesheets="true">
+    
+    <style>
+    .PageCountGrid li{
+            display:inline-block;
+            border:1px solid #8a8a8a;
+            padding:5px;
+        }
+    </style>
+    
+    <!---apex:slds/-->
+    <apex:form >    
+        <apex:pageblock title="Accounts">
+            <apex:pageblocksection columns="1">
+                <apex:facet name="body">
+                    <apex:outputpanel layout="none">
+                        <apex:pageblocktable id="pbAccounts" value="{!Accounts}" var="a">
+                            <apex:column >
+                                <apex:facet name="header">Account Name</apex:facet> 
+                                <apex:outputlink value="/{!a.Id}">{!a.Name}</apex:outputlink>
+                            </apex:column>
+                            <apex:column value="{!a.AccountNumber}"></apex:column>
+                            <apex:column value="{!a.Industry}"></apex:column>
+                            <apex:column value="{!a.Website}"></apex:column>
+                        </apex:pageblocktable>
+                        <apex:outputpanel layout="block" styleclass="listViewport">
+                            
+                            <div class="bottomNav">
+                                
+                                <div class="paginator">
+                                    <apex:panelgrid id="gridPaging" columns="3" width="100%" columnclasses="left, center, right">
+                                        <apex:panelgroup >
+                                            <span class="selectorTarget">
+                                                <strong> Page {!PageNumber} of {!PageCount}</strong>
+                                            </span>
+                                        </apex:panelgroup>
+                                        
+                                        <apex:panelgroup >
+                                            <span class="prevNextLinks">
+                                                
+                                                <span class="prevNext">
+                                                    <apex:commandButton id="linkMovePrev" immediate="true" value="Previous Page" status="statusPaging" action="{!Prev}" rerender="gridPaging, pbAccounts" rendered="{!allowMovePrev}">
+                                                        <!--img src="/s.gif" title="Previous" alt="Previous" class="prev">
+                                                        <span>Previous</span-->
+                                                    </apex:commandButton>
+                                                    <apex:outputpanel layout="none" rendered="{!NOT(allowMovePrev)}">
+                                                        <!--apex:image url="/s.gif" title="Previous" alt="Previous" styleclass="prevoff"></apex:image!>
+                                                        <span>Previous</span-->
+                                                    </apex:outputpanel>
+                                                </span>
+                                                
+                                                <span class="PageCountGrid">
+                                                    <apex:repeat value="{!pagecount}" var="PgCount">
+                                                    <ui>
+                                                    <!---li>{!PgCount}</li-->
+                                                    <li>1</li>
+                                                        <li>2</li>
+                                                        <li>3</li>
+                                                        <li>4</li>
+                                                        <li>5</li>
+                                                        <li>6</li>
+                                                    </ui> 
+                                                        </apex:repeat>
+                                                </span>
+                                                
+                                                <span class="prevNext">
+                                                    <apex:commandButton id="linkMoveNext" immediate="true"  value="Next Page" status="statusPaging" action="{!Next}" rerender="gridPaging, pbAccounts" rendered="{!allowMoveNext}">
+                                                        <!--span>Next</span>
+                                                        <img src="/s.gif" title="Next" alt="Next" class="next"!-->
+                                                    </apex:commandButton>
+                                                    
+                                                    <apex:outputpanel layout="none" rendered="{!NOT(allowMoveNext)}">
+                                                        <!--span>Next</span>
+                                                        <apex:image url="/s.gif" title="Next" alt="Next" styleclass="nextoff"></apex:image!-->
+                                                    </apex:outputpanel>
+                                                </span>
+                                            </span>
+                                        </apex:panelgroup>
+                                    </apex:panelgrid> 
+                                </div>
+                                
+                            </div>
+                            
+                        </apex:outputpanel>
+                    </apex:outputpanel>
+                </apex:facet>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

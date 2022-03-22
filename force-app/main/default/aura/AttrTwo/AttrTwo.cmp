@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:attribute name="attrB" type="string" default=""/>   
+    {!v.attrB}      
+</aura:component>

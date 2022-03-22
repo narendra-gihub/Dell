@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:method name="AuraMtd" action="{!c.PullData}">
+        
+        <aura:attribute name="param1" type="string" default="Getting result from aura method"/>
+        
+    </aura:method>
+    
+</aura:component>

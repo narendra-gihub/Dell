@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="AttrOne" type="string" default="Component One Value"/>
+    
+    <c:CmpTwo AttrTwo="{!v.AttrOne}"/>   
+</aura:component>

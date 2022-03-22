@@ -1,0 +1,8 @@
+<apex:page controller="ActionPollar" standardStylesheets="true">
+    <apex:slds />
+    <apex:form >     
+        <apex:outputText value="Watch this counter: {!count}" id="counter"/>
+        <apex:actionPoller interval="5" action="{!incrementCounter}" rerender="counter"/>     
+    </apex:form>
+    <c:AccountPageVFHeader /> 
+</apex:page>

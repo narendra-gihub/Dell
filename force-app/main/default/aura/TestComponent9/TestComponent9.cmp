@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="message" type="string" default="Lightning Component Bundle"/>
+    <aura:attribute name="show" type="boolean" default="true"/>
+    <aura:attribute name="bgColor" type="string" default="red"/>
+    
+    <div class="MainSection">
+    <aura:if isTrue="{! v.show}">
+        <div class="cmpStyles slds-m-bottom_xx-large slds-p-around_large slds-text-heading_large slds-text-align_center" 
+             style="{! 'background-color:'+v.bgColor}">   
+            {! v.message}
+        </div>
+    </aura:if>
+    
+    <lightning:button label="Change Text" variant="brand" onclick="{! c.ChangeText}"/>
+    </div>
+</aura:component>

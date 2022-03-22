@@ -1,0 +1,24 @@
+<apex:page >
+	Custom Settings Example
+</apex:page> 
+<!---
+Introduction:
+1.Custom settings are similar to custom objects.
+2.Enable application developers to create custom sets of data, as well as create and associate custom data for an organization, profile, or specific user.
+3.The custom setting data can then be used by formula fields, validation rules, flows, Apex, and the SOAP API.
+4.It allows us to store set of data and access it without querying it from apex.
+
+Types:
+List custom setting
+Hierarchycustom setting
+
+Limitatons:
+300 fields per custom setting.
+Custom setting object record cannot be shared.
+When a custom setting is created, owner is not So the owner can’t be changed.
+Custom settings are a type of custom object. Custom setting also counts against the total number of custom objects available for the organization.
+Navigation for Custom setting
+
+Navigation:
+Setup =>Build=>Develop=>Custom setting=>New
+-->

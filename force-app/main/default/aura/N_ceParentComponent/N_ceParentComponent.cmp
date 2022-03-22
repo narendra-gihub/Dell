@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <!---Current Component-->
+    <aura:handler name="CmpEvent" event="c:N_ceEvent" action="{!c.getEventParam}"/>
+    <aura:attribute name="ParentText" type="string" default="Sample Parent Text"/>
+    <div class="mainSection">{!v.ParentText}</div>
+    
+    <!---Child Component-->
+    <c:N_ceChildComponent/>
+    
+</aura:component>

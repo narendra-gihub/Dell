@@ -1,0 +1,3 @@
+<aura:component extends="c:parentComponentExt" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:set attribute="ParentMessage" value="Child Component Value"/>
+</aura:component>

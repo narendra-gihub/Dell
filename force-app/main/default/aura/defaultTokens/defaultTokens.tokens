@@ -1,0 +1,8 @@
+<aura:tokens>
+    <aura:token name="fntSize" value="40px"/>
+    <aura:token name="clr" value="#fff"/>
+    <aura:token name="bgclrGrn" value="green"/>
+    <aura:token name="bgclrRed" value="red"/>
+    <aura:token name="pndg" value="30px"/>
+    <aura:token name="divWidth" value="20px"/>
+</aura:tokens>

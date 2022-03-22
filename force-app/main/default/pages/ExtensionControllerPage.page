@@ -1,0 +1,81 @@
+<apex:page standardController="Account" recordSetVar="accounts" extensions="fakeAccountsListController" standardStylesheets="true">
+    <apex:slds />
+    <apex:form >
+        <apex:pageBlock title="Accounts List" id="accounts_list">
+            Filter: 
+            <apex:selectList value="{! filterId }" size="1">
+                <apex:selectOptions value="{! listViewOptions }"/>
+                <apex:actionSupport event="onchange" reRender="accounts_list"/>
+            </apex:selectList><apex:pageBlockTable value="{! accounts }" var="act">
+            <!--  THE ACTIONS IN EACH COLUMN ARE NOT WORKING --><apex:column value="{! act.Name }">
+            <apex:facet name="header">
+                <apex:commandLink action="{! sortByName }" 
+                                  reRender="accounts_list">First Name
+                </apex:commandLink>
+            </apex:facet>
+            </apex:column>
+            <apex:column value="{! act.Phone }">
+                <apex:facet name="header">
+                    <apex:commandLink action="{! sortByPhone }" 
+                                      reRender="accounts_list">Phone
+                    </apex:commandLink>
+                </apex:facet> 
+            </apex:column> 
+            <apex:column value="{! act.NumberOfEmployees }">
+                <apex:facet name="header">
+                    <apex:commandLink action="{! sortByNumEmpl }" 
+                                      reRender="accounts_list">Num of Empl
+                    </apex:commandLink>
+                </apex:facet> 
+            </apex:column>     
+            <!---apex:column value="{! act.Associated_Contacts__C }">
+                <apex:facet name="header">
+                    <apex:commandLink action="{! sortByAssCons }" 
+                                      reRender="accounts_list">Associated Contacts
+                    </apex:commandLink>
+                </apex:facet> 
+            </apex:column-->
+            <apex:column value="{! act.Owner.Email }">
+                <apex:facet name="header">
+                    <apex:commandLink action="{! sortByOwnerEmail }" 
+                                      reRender="accounts_list">Owner Email
+                    </apex:commandLink>
+                </apex:facet> 
+            </apex:column></apex:pageBlockTable>
+            <!-- Pagination -->
+            <table style="width: 100%"><tr>
+                <td>
+                    Page: <apex:outputText value=" {!PageNumber} of {! CEILING(ResultSize / PageSize) }"/>
+                </td>            
+                <td align="center">
+                    <!-- Previous page -->
+                    <!-- active -->
+                    <apex:commandLink action="{! Previous }" value="« Previous"
+                                      rendered="{! HasPrevious }"/>
+                    <!-- inactive (no earlier pages) -->
+                    <apex:outputText style="color: #ccc;" value="« Previous"
+                                     rendered="{! NOT(HasPrevious) }"/>
+                    &nbsp;&nbsp;  
+                    <!-- Next page -->
+                    <!-- active -->
+                    <apex:commandLink action="{! Next }" value="Next »"
+                                      rendered="{! HasNext }"/>
+                    <!-- inactive (no more pages) -->
+                    <apex:outputText style="color: #ccc;" value="Next »"
+                                     rendered="{! NOT(HasNext) }"/>
+                </td>
+                <td align="right">
+                    Records per page:
+                    <apex:selectList value="{! PageSize }" size="1">
+                        <apex:selectOption itemValue="25" itemLabel="25"/>    
+                        <apex:selectOption itemValue="5" itemLabel="5"/>
+                        <apex:selectOption itemValue="10" itemLabel="10"/>
+                        <apex:selectOption itemValue="50" itemLabel="50"/>
+                        <apex:selectOption itemValue="100" itemLabel="100"/>
+                        <apex:actionSupport event="onchange" reRender="accounts_list"/>
+                    </apex:selectList>
+                </td>
+                </tr></table>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="OppId" type="string" default="0066F000019JYbGQAW"/>
+    <aura:attribute name="OppId" type="string" default="0066F000019JYbGQAW"/>
+</aura:event>

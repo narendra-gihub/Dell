@@ -1,0 +1,7 @@
+<design:component>
+    <design:attribute name="frmWidth" label="Frame Width"/>
+    <design:attribute name="frmHeight" label="Frame Height"/>
+    <design:attribute name="frmBgColor" label="Frame Background Color"/>
+    <design:attribute name="frmPadding" label="Frame Padding"/>
+    <design:attribute name="frmMargin" label="Frame Margin"/>
+</design:component>

@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="textVal" label="Change the text value"/>
+    <design:attribute name="textBgCol" label="Change the Color"/>
+</design:component>

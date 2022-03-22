@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" > 
+    
+    <aura:attribute name="Message" type="string" default="Hi Madhavrao"/>
+    <aura:attribute name="bgclr" type="string" default="red"/>
+    <aura:attribute name="padding" type="integer" default="20"/> 
+    <aura:attribute name="cndtn" type="boolean" default="false"/>
+    
+    <aura:if isTrue="{!v.cndtn}">
+    	<div style="{!'background-color:'+v.bgclr + ';padding:'+v.padding+'px'}">
+        {!v.Message}
+    </div>
+    </aura:if>
+    <div class="cmpstle">
+        {!v.Message}
+    </div>
+    
+    <ui:button label="Change Text" press="{! c.changetxt}"/>
+    <lightning:button variant="brand" label="show div" onclick="{!c.showdiv}"/>
+    
+</aura:component>

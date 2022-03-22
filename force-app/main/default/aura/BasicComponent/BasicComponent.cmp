@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" 
+                controller="getDataController">
+    <aura:attribute name="data" type="list"/>
+    <aura:attribute name="iframeUrl" type="string" default="https://www.youtube.com/"/>
+    
+    <div style="padding:20px;margin:20px;">
+    	{!v.data}
+        <aura:iteration items="{!v.data}" var="d">
+            {!d}<br/>
+        </aura:iteration>
+        
+    </div>
+    <lightning:button label="checkValue" variant="brand" onclick="{!c.checkData}"/>
+    
+    <iframe src="{!v.iframeUrl}"
+            width="{!v.width}"
+            height="{!v.height}"
+            style="{!v.style}"
+            frameBorder="{!v.frameBorder}"
+            sandbox="{!v.sandbox}"
+            scrolling="{!v.scrolling}"/>
+    
+</aura:component>

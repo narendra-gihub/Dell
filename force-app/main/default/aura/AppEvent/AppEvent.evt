@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="appeventName" type="string"/>
+    <aura:attribute name="appeventDate" type="date"/> 
+</aura:event>

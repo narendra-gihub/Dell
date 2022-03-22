@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global"> 
+    <aura:attribute name="attrmsg" type="string" default="Welcome to Component Bundle"/>
+    <div class="commonStyles">
+        {!v.attrmsg}
+    </div>
+    
+    <lightning:button label="CallJsController" onclick="{!c.callJsController}"/>
+    <lightning:button label="CallJsHelper" onclick="{!c.CallJsHelper}"/> <br/><br/>
+    
+    <lightning:button label="ChangeValue" onclick="{!c.ChangeValues}"/>
+    <aura:attribute name="BooleanVal" type="boolean" default="true"/>
+    <aura:if isTrue="{!v.BooleanVal}">
+        The Value is True
+        <aura:set attribute="else">
+            The Value is False
+        </aura:set>
+    </aura:if> <br/><br/>
+    
+    <lightning:button label="ChangeValue2" onclick="{!c.ChangeValues2}"/>
+    <aura:attribute name="BooleanVal2" type="boolean" default="true"/>
+    <aura:if isTrue="{!v.BooleanVal2}">
+        <c:N_unRender/>
+        <aura:set attribute="else">
+            The Value is False
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

@@ -1,0 +1,49 @@
+<aura:component controller="cacheableController" implements="flexipage:availableForAllPageTypes,force:appHostable">
+    
+    <!--Declare Event Handlers-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <!--Declare Attributes-->
+    <aura:attribute name="accList" type="Account[]"/>
+    
+    <!--Component Start-->
+    <div class="slds-m-around_xx-large">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Account Type">Account Type</div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Industry">Industry</div>
+                    </th>
+                    <th class="slds-text-title_caps" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.accList}" var="acc">
+                    <tr class="slds-hint-parent">
+                        <th data-label="Account Name" scope="row">
+                            <div class="slds-truncate" title="{!acc.Name}"><a href="javascript:void(0);" tabindex="-1">{!acc.Name}</a></div>
+                        </th>
+                        <td data-label="Account Type">
+                            <div class="slds-truncate" title="{!acc.Type}">{!acc.Type}</div>
+                        </td>
+                        <td data-label="Industry">
+                            <div class="slds-truncate" title="{!acc.Industry}">{!acc.Industry}</div>
+                        </td>
+                        <td data-label="Phone">
+                            <div class="slds-truncate" title="{!acc.Phone}">{!acc.Phone}</div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    <!--Component End-->
+</aura:component>

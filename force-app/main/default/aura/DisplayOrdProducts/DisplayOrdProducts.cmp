@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+                access="global" > 
+    
+    <aura:attribute name="showResult" type="boolean" default="true"/>
+
+    <div class="mainSection">  
+        <aura:if isTrue="{!v.showResult}">
+            <span>Show order products</span>
+        </aura:if> 
+    </div>
+    <div style="margin-top:20px">
+        <lightning:button label="Hide Results" onclick="{!c.hideResults}"/> 
+        <lightning:button label="Show Results" onclick="{!c.showResults}"/> 
+    </div> 
+    
+    <c:GetRecords/>
+</aura:component>
